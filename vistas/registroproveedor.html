@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/encabezado.css" rel="stylesheet" type="text/css" />
+    <link href="/css/registro-de-sesion.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>Registro</title>
+</head>
+<body>
+    
+ <header class="header" style="min-height: 10vh;">
+
+        <div class="menu container">
+            <a href="/" class="logo">Manos del Peru</a>
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="/img/iconos/menu.png" class="menu-icono" alt="menu">
+            </label>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/index.html">inicio</a></li>
+                    <li><a href="/vistas/QuienesSomos.html">quienes somos?</a></li>
+                    <li><a href="/vistas/sesionproveedor.html">emprende tu negocio</a></li>
+                </ul>
+            </nav>
+            <div>
+                <ul style="display: flex; align-items: center; gap: 18px;">
+                    <li class="submenu">
+                        <a class="carro" href="/vistas/historial.html">
+                        <img src="/img/iconos/car.svg" id="img-carrito" alt="carrito">
+                        </a>
+                        <div id="carrito">
+                            <table id="lista-carrito">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody> </tbody>
+                            </table>
+                            <a href="#" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+   </header>
+
+
+      <div class="grids">
+            <div class="grid1">
+
+                <div class="full-width box">
+                    <h3>¿Por qué trabajar con nosotros?</h3>
+                    <p class="exp">
+                        En manos del Perú, buscamos ayudar a los emprendedores a crecer y expandir su negocio.
+                        Te ofrecemos una plataforma para que puedas vender tus productos de manera fácil y rápida.
+                        Además, contamos con un equipo de soporte que te ayudará en todo momento.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid2">
+                <div class="half-width box">
+                    <h3>¿Cómo funciona?</h3>
+                    <p class="exp">
+                        Para empezar a vender, solo necesitas registrarte como proveedor.
+                        Una vez que estés registrado, podrás agregar tus productos y empezar a vender.
+                        Te ofrecemos una plataforma fácil de usar y un equipo de soporte que te ayudará en todo momento.
+                    </p>
+                </div>
+
+                <div class="half-width box">
+                    <h3>¿Qué necesitas para empezar?</h3>
+                    <p class="exp">
+                        Solo necesitas tener un producto para vender y registrarte como proveedor.
+                        Una vez que estés registrado, podrás agregar tus productos y empezar a vender.
+                        Te ofrecemos una plataforma fácil de usar y un equipo de soporte que te ayudará en todo momento.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid3">
+                <div class="icon-box">
+                    <img class="i" src="/img/logos/seguridad.png" alt="seguridad">
+                </div>
+                <div class="icon-box">
+                    <img class="i" src="/img/logos/tecnico.png" alt="soporte técnico">
+                </div>
+                <div class="icon-box">
+                    <img class="i" src="/img/logos/apoyo.png" alt="apoyo">
+                </div>
+            </div>
+        </div>
+
+
+        <span class="spann">
+    Si no tienes una cuenta solo regístrate ➤ 
+    <button id="abrirModal">Registrarme</button>
+</span>
+
+<div class="formulario">
+    <div id="modalSesion" class="modal" style="display:none;">
+        <form method="post"
+              action="/api/proveedores/registro"
+              class="formulario-registro"
+              enctype="multipart/form-data">
+            <span id="cerrarModal" style="float:right; font-size:28px; cursor:pointer;">&times;</span>
+            <h1 class="regis">REGÍSTRATE</h1>
+            <div class="grid4">
+                <div>
+                    <input type="text" name="dniProveedor" placeholder="DNI" required>
+                    <input type="text" name="nombreProveedor" placeholder="Nombres" required>
+                </div>
+                <div class="img">
+                    <span>Imagen de perfil</span>
+                    <input type="file" id="imagen" name="imagen" accept="image/*" required>
+                </div>
+                <div>
+                    <input type="text" name="apellidoProveedor" placeholder="Apellidos" required>
+                    <input type="email" name="correoProveedor" placeholder="Correo" required>
+                </div>
+                <div>
+                    <input type="password" name="contraseñaProveedor" placeholder="Contraseña" required>
+                    <input type="text" name="direccionProveedor" placeholder="Dirección">
+                </div>
+            </div>
+            <input type="text" name="contactoProveedor" placeholder="Número de contacto">
+            <div class="botones">
+                <button type="submit">Registrate</button>
+                <button type="button" onclick="window.location.href = '/vistas/sesionproveedor.html'">Iniciar sesión</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/js/addproveedor.js"></script>
+</body>
+</html>

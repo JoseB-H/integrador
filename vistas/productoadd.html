@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/css/encabezado.css" rel="stylesheet" type="text/css" />
+    <link href="/css/registro-producto.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    
+
+    
+   <header class="header" style="min-height: 10vh;">
+
+        <div class="menu container">
+            <a href="/" class="logo">Manos del Peru</a>
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="/img/iconos/menu.png" class="menu-icono" alt="menu">
+            </label>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/index.html">inicio</a></li>
+                    <li><a href="/vistas/QuienesSomos.html">quienes somos?</a></li>
+                    <li><a href="/vistas/sesionproveedor.html">emprende tu negocio</a></li>
+                </ul>
+            </nav>
+    <div class="icono-proveedor" style="position:relative;">
+        <span id="bienvenidaProveedor" style="margin-right:10px;font-weight:bold; padding: 10px;"></span> <br>
+        <img id="fotoProveedor" class="foto-proveedor" src="/img/perfil_proveedor/" alt="Foto proveedor" style="width:48px;height:48px;border-radius:50%;object-fit:cover;cursor:pointer;">
+        <div id="menuProveedor" class="menu-proveedor" style="display:none;position:absolute;right:0;top:60px;background:#fff;border-radius:10px;box-shadow:0 4px 16px #0002;padding:10px 0;min-width:150px;z-index:100;">
+            <a href="/vistas/perfilproveedor.html" style="display:block;padding:10px 20px;color:#222;text-decoration:none;">Mi perfil</a>
+            <a href="#" id="cerrarSesionProveedor" style="display:block;padding:10px 20px;color:#222;text-decoration:none;">Cerrar sesión</a>
+        </div>
+    </div>
+</div>
+   </header>
+
+<h1>Formulario para Agregar Producto</h1>
+<form method="post" action="/api/productos/registrar" enctype="multipart/form-data">
+    <label>ID del Proveedor:</label><br>
+    <input type="number" name="id_proveedor" id="id_proveedor" readonly required><br><br>
+
+    <label>Nombre del Producto:</label><br>
+    <input type="text" name="nombre" required><br><br>
+
+    <label>Imagen del Producto:</label><br>
+    <input type="file" name="imagen" accept="image/*" required><br><br>
+
+    <label>Descripción:</label><br>
+    <textarea name="descripcion" rows="4" required></textarea><br><br>
+
+    <label>Precio:</label><br>
+    <input type="number" name="precio" step="0.01" required><br><br>
+
+    <label>Stock:</label><br>
+    <input type="number" name="stock" required><br><br>
+
+    <button type="submit">Agregar Producto</button>
+</form>
+
+<script src="/js/addproducto.js"></script>
+</body>
+</html>

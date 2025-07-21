@@ -54,6 +54,194 @@
             background-color: #984f58;
             color: white;
         }
+        @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  min-height: 70vh;
+  background-color: #f5f5f53b;
+  padding: 70px 0;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 25px;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.menu .navbar ul li {
+  position: relative;
+  float: left;
+}
+
+.menu .navbar ul li a {
+  color: black;
+  padding: 20px;
+  font-size: 20px;
+  display: block;
+}
+
+#menu {
+  display: none;
+}
+
+.menu-icono {
+  width: 25px;
+}
+
+.menu label {
+  cursor: pointer;
+  display: none;
+}
+
+.submenu {
+  position: relative;
+}
+
+.submenu #carrito {
+  display: none;
+}
+
+.submenu:hover #carrito {
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  background-color: #4e4b5076;
+  min-width: 400px;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+}
+
+th,
+td {
+  color: #2600ff;
+}
+
+.borrar {
+  background-color: black;
+  border-radius: 50%;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: blue;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  /* padding: 0 200px; si la imagen esta grande esto sirve para redimensionar*/
+}
+
+.header-img {
+  flex-basis: 50%;
+  text-align: center;
+}
+
+.header-txt {
+  flex-basis: 50%;
+  text-align: center;
+}
+
+.header-txt h1 {
+  font-size: 90px;
+  color: #111111;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 15px;
+}
+
+.header-txt p {
+  font-size: 20px;
+  text-decoration: uppercase;
+  margin-bottom: 20px;
+}
+
+.btn-1 {
+  display: inline-block;
+  padding: 11px 25px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+.ofert {
+  padding: 20px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ofert-1 {
+  display: flex;
+  align-items: center;
+  flex-basis: calc(33.3% - 15px);
+  background-color: #f5f5f5;
+  padding: 35px;
+}
+
+.ofert-img {
+  flex-basis: 50%;
+  margin-right: 15px;
+}
+
+.ofert-img img {
+  width: 250px;
+}
+
+.ofert-txt {
+  flex-basis: 50%;
+  text-align: center;
+}
+
+.ofert-txt h3 {
+  font-size: 25px;
+  color: #111111;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-family: "oswald", sans-serif;
+}
     </style>
 </head>
 <script src="//rum-static.pingdom.net/pa-687dcf72c99eee0012000024.js" async></script>

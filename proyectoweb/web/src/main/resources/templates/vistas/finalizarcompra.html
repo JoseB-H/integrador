@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/encabezado.css" rel="stylesheet" type="text/css" />
+    <link href="/css/final-compra.css" rel="stylesheet" type="text/css" />
+    <title>Document</title>
+</head>
+
+<body>
+   <header class="header">
+
+        <div class="menu container">
+            <a href="/" class="logo">Manos del Peru</a>
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="/img/iconos/menu.png" class="menu-icono" alt="menu">
+            </label>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/index.html">inicio</a></li>
+                    <li><a href="/vistas/QuienesSomos.html">quienes somos?</a></li>
+                    <li><a href="/vistas/sesionproveedor.html">emprende tu negocio</a></li>
+                </ul>
+            </nav>
+            <div>
+                <ul style="display: flex; align-items: center; gap: 18px;">
+                    <li class="submenu">
+                        <a class="carro" href="/vistas/historial.html">
+                        <img src="/img/iconos/car.svg" id="img-carrito" alt="carrito">
+                        </a>
+                        <div id="carrito">
+                            <table id="lista-carrito">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody> </tbody>
+                            </table>
+                            <a href="#" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
+                        </div>
+                    </li>
+                    <li style="position: relative;">
+                        <button id="abrirModalLogin" style="background:none;border:none;cursor:pointer;">
+                            <img src="/img/iconos/usuario.png" alt="login cliente"
+                                style="width:50px;vertical-align:middle;">
+                        </button>
+                        <div id="nombreClienteLabel" style="font-size:13px; text-align:center;"></div>
+                        <div id="usuarioMenu"
+                            style="display:none; position:absolute; top:55px; left:0; background:#fff; border:1px solid #ccc; border-radius:8px; min-width:160px; box-shadow:0 2px 8px #0002; z-index:1000;">
+                            <div id="nombreClienteMenu" style="padding:10px; font-weight:bold; text-align:center;">
+                            </div>
+                            <button id="cerrarSesionBtn"
+                                style="width:100%; border:none; background:#f44336; color:#fff; padding:10px; border-radius:0 0 8px 8px; cursor:pointer;">Cerrar
+                                sesión</button>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+   </header>
+
+    <!-- ...resto del HTML... -->
+    <div class="compra">
+        <div class="productos">
+            <h2>Detalles del Pedido</h2>
+            <div id="resumenPedido"></div>
+        </div>
+        <div class="datos">
+            <form id="formDni" autocomplete="off" style="margin-bottom: 18px;">
+                <label for="dniFinalizar">DNI:</label>
+                <input type="text" id="dniFinalizar" readonly>
+                <button type="button" id="btnValidarDni">Validar</button>
+            </form>
+            <div id="formCliente" style="display:none;"></div>
+            <div id="formPago" style="display:none;"></div>
+        </div>
+    </div>
+
+    
+
+ <!-- Modal Login Cliente -->
+    <div id="modalLoginCliente" class="modal-centro" style="display:none;">
+        <div class="modal-contenido">
+            <span class="cerrar" id="cerrarLogin">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form id="formLoginCliente" autocomplete="off">
+                <input type="text" id="loginCorreo" placeholder="Correo" required>
+                <input type="password" id="loginPass" placeholder="Contraseña" required>
+                <div style="margin-top:18px;">
+                    <button type="submit" class="btn-2">Iniciar sesión</button>
+                    <button type="button" id="abrirModalRegistro" class="btn-2"
+                        style="margin-left:10px;">Registrarse</button>
+                </div>
+            </form>
+            <div id="loginClienteError" style="color:red; margin-top:8px; display:none;"></div>
+        </div>
+    </div>
+
+    <!-- Modal Registro Cliente -->
+    <div id="modalRegistroCliente" class="modal-centro" style="display:none;">
+        <div class="modal-contenido">
+            <span class="cerrar" id="cerrarRegistro">&times;</span>
+            <h2>Registrarse</h2>
+            <form id="formRegistroCliente" autocomplete="off">
+                <input type="text" id="regDni" placeholder="DNI" required>
+                <input type="text" id="regNombre" placeholder="Nombres" required>
+                <input type="text" id="regApellido" placeholder="Apellidos" required>
+                <input type="email" id="regCorreo" placeholder="Correo" required>
+                <input type="text" id="regDireccion" placeholder="Dirección" required>
+                <input type="text" id="regContacto" placeholder="Celular" required>
+                <input type="password" id="regPass" placeholder="Contraseña" required>
+                <div style="margin-top:18px;">
+                    <button type="submit" class="btn-2">Registrarme</button>
+                </div>
+            </form>
+            <div id="registroClienteError" style="color:red; margin-top:8px; display:none;"></div>
+        </div>
+    </div>
+
+    <script src="/js/usuarios.js"></script>
+    <script src="/js/finalizarcompra.js"></script>
+</body>
+
+</html>

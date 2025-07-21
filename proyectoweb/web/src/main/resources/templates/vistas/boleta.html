@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boleta de compra</title>
+        <link href="/css/boleta.css" rel="stylesheet" type="text/css" />
+            
+</head>
+<body>
+    <!-- Ejemplo de estructura para boleta.html -->
+ <div class="boleta-box">
+        <div class="boleta-header">
+            <h1>Boleta de Compra</h1>
+        </div>
+        <div class="cliente-info">
+            <p><strong>Cliente:</strong> <span id="clienteNombre"></span></p>
+            <p><strong>DNI:</strong> <span id="clienteDni"></span></p>
+            <p><strong>Correo:</strong> <span id="clienteCorreo"></span></p>
+            <p><strong>Dirección:</strong> <span id="clienteDireccion"></span></p>
+        </div>
+        <table class="detalle-productos">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody id="detalleProductos"></tbody>
+        </table>
+        <div class="total-final">
+            Total: <span id="totalFinal"></span>
+        </div>
+        <div class="boleta-acciones">
+            <button class="print-btn" onclick="window.print()">Imprimir Boleta</button>
+            <button class="back-btn" onclick="window.location.href='/index.html'">Volver al inicio</button>
+        </div>
+    </div>
+    <script src="/js/boleta.js"></script>
+</body>
+</html>
